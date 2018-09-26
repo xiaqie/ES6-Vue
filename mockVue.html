@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="text1">
+        <br>
+        <input type="text" v-model="text2">
+        <br>
+        <textarea type="text" v-model="text3"></textarea>
+        <br>
+        <button @click="add">加一</button>
+        <h1>您输入的是：{{text1}}+{{text2}}+{{text3}}</h1>
+        <select v-model="select">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+        </select>
+        <select v-model="select">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+        </select>
+        <h1>您选择了：{{select}}</h1>
+    </div>
+</body>
+<script src="js/mockVue.js"></script>
+<script>
+
+
+let app = new TinyVue({
+    el: '#app',
+    data: {
+        text1: 123,
+        text2: 456,
+        text3: '文本框',
+        select: 'saab'
+    },
+    methods: {
+        add() {
+            this.text1++
+                this.text2++
+        }
+    }
+})
+</script>
+
+</html>
